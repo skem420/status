@@ -1,0 +1,23 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #e1e1e1;
+    background-color: #050505;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  h1 {
+    font-weight: bold;
+  }
+  
+  a {
+    color: #e1e1e1;
+  }
+  
+  #status {
+    margin-bottom: -10px;
+  }
+
+  #statusclr {
+    color: rgb(62, 255, 62);
+  }
