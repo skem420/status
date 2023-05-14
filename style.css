@@ -1,23 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    color: #e1e1e1;
-    background-color: #050505;
-    text-align: center;
-    padding-top: 50px;
-  }
-  
-  h1 {
-    font-weight: bold;
-  }
-  
-  a {
-    color: #e1e1e1;
-  }
-  
-  #status {
-    margin-bottom: -10px;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  background: #b987ff;
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: auto;
+  animation: bar 2s ease-in-out;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+#main {
+  animation: opacity 3s ease-in-out, moveup 2s ease-in-out;
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  filter: blur(0rem);
+  transition: filter 1s;
+}
+
+#main h1 {
+  color: white;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  animation: movefront 3s ease-in-out;
+  white-space: nowrap;
+}
+
+#links {
+  text-align: right;
+}
+
+#links p {
+  align-self: right;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 100;
+  position: absolute;
+  cursor: pointer;
+}
+
+
+#links p a {
+  color: white;
+  text-decoration: none;
+}
+
+#links p::after {
+  content: "";
+  background: #8b8bff;
+  display: block;
+  width: 0;
+  left: 0;
+  position: absolute;
+  height: 1px;
+  margin-top: -1px;
+  transition: .2s ease-out;
+}
+
+#links p:hover::after {
+  width: 100%;
+  transition: .2s ease-out;
+}
+
+#header {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header p {
+  color: white;
+  float: left;
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+#header select {
+  border: solid 1px #303030;
+  background: #0d0d0d;
+  color: white;
+  padding: 5px;
+  float: right;
+}
+
+#line {
+  padding: 10px;
+  color: #303030;
+}
+
+#line hr {
+  color: #303030;
+  width: 100%;
+}
+
+#handles {
+  align-self: center;
+  width: 90%;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.handle {
+  border: solid 1px #303030;
+  color: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 14px;
+}
+
+#username {
+  font-size: 22px;
+  overflow: hidden;
+  width: 70%;
+}
+
+#username a {
+  text-decoration: none;
+  color: white;
+  transition: .4s;
+}
+
+#username a:hover {
+  text-decoration: none;
+  color: #F0B4B4;
+  transition: .4s;
+}
+
+#date {
+  color: #666666;
+}
+
+#price {
+  font-size: 16px;
+  float: right;
+}
+
+#button {
+  margin-top: 15px;
+  background: #0d0d0d;
+  border: solid 1px #303030;
+  color: gray;
+  padding: 10px 50px;
+  text-align: center;
+  font-size: 14px;
+  transition: .4s;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#button:hover {
+  transition: .4s;
+  color: #F0B4B4;
+}
+
+#curtainleft {
+  height: 100vh;
+  left: -100%;
+  position: fixed;
+  background: rgb(26, 26, 26);
+  width: 50%;
+  animation: moveleft 1.5s ease-in-out;
+}
+
+#curtainright {
+  height: 100vh;
+  right: -100%;
+  position: fixed;
+  background:rgb(26, 26, 26);
+  width: 50%;
+  animation: moveright 1.5s ease-in-out;
+}
+
+
+#discord {
+  color: rgb(30, 222, 30);
+  font-weight: 600;
+}
+
+@keyframes bar {
+  0% {
+    width: 0;
   }
 
-  #statusclr {
-    color: rgb(62, 255, 62);
+  50% {
+    width: 0;
   }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes moveup {
+  0% {
+    top: 50vh;
+  }
+
+  50% {
+    top: 50vh;
+  }
+
+  100% {
+    top: 40vh;
+  }
+}
+
+
+@keyframes movefront {
+  0% {
+    font-size: 30px;
+  }
+
+  60% {
+    font-size: 30px;
+  }
+
+  100% {
+    font-size: 35px;
+  }
+}
+
+
+@keyframes movedown {
+  0% {
+    top: 40vh;
+  }
+
+  50% {
+    top: 40vh;
+  }
+
+  100% {
+    top: 47.5vh;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes moveleft {
+  0% {
+    left: 0%;
+  }
+
+  20% {
+    left: 0%;
+  }
+
+  100% {
+    left: -100vw;
+  }
+}
+
+@keyframes moveright {
+  0% {
+    right: 0%;
+  }
+
+  20% {
+    right: 0%;
+  }
+
+  100% {
+    right: -100vw;
+  }
+}
